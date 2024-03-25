@@ -31,9 +31,6 @@ To run the game, follow these steps:
 
 3. Follow the on-screen instructions to choose the game mode and make moves on the board.
 
-## Screenshots
-
-![Tic-Tac-Toe Screenshot]([path/to/your/screenshot.png](https://drive.google.com/file/d/1eEa68zxmoV37v2fv3o0VOUKgPWpfXu-H/view?usp=sharing))
 
 ## Contributing
 
