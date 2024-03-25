@@ -79,6 +79,39 @@ public class TicTacToe {
 		place(rand, 'O');
 		isGameOver();
 	}
+	
+	private void playerTurn() {
+		System.out.println("Player's turn: ");
+		int position;
+		do {
+			System.out.print("Enter the position(0 - 8): ");
+			position = scan.nextInt();
+		}
+		while(!validPosition(position));
+		place(position, 'X');
+		isGameOver();
+	}
+	
+	private boolean validPosition(int position) {
+		if (position >= 0 && position <= 2) {
+			return board[0][position] == ' ';
+		}else if (position >= 3 && position <= 5) {
+			return board[1][position % 3] == ' ';
+		}else if (position >= 6 && position <= 8) {
+			return board[2][position % 3] == ' ';
+		}
+		return false;
+	}
+	
+	private void place(int position, char c) {
+		if (position >= 0 && position <= 2) {
+			board[0][position] = c;
+		}else if (position >= 3 && position <= 5) {
+			board[1][position % 3] = c;
+		}else if (position >= 6 && position <= 8) {
+			board[2][position % 3] = c;
+		}
+	}
 
 	private void isGameOver() {
 		if(board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X' 
@@ -151,39 +184,6 @@ public class TicTacToe {
 		board = newBoard;
 		System.out.println("Board Reseted");
 		gameOver = false;
-	}
-
-	private boolean validPosition(int position) {
-		if (position >= 0 && position <= 2) {
-			return board[0][position] == ' ';
-		}else if (position >= 3 && position <= 5) {
-			return board[1][position % 3] == ' ';
-		}else if (position >= 6 && position <= 8) {
-			return board[2][position % 3] == ' ';
-		}
-		return false;
-	}
-
-	private void playerTurn() {
-		System.out.println("Player's turn: ");
-		int position;
-		do {
-			System.out.print("Enter the position(0 - 8): ");
-			position = scan.nextInt();
-		}
-		while(!validPosition(position));
-		place(position, 'X');
-		isGameOver();
-	}
-
-	private void place(int position, char c) {
-		if (position >= 0 && position <= 2) {
-			board[0][position] = c;
-		}else if (position >= 3 && position <= 5) {
-			board[1][position % 3] = c;
-		}else if (position >= 6 && position <= 8) {
-			board[2][position % 3] = c;
-		}
 	}
 
 	private void print() {
